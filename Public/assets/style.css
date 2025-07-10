@@ -1,0 +1,159 @@
+/* File: public/assets/style.css (Tema Terpadu & Final) */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Variabel Warna Tema */
+:root {
+    --bg-color: #F8E5E5;
+    --primary-color: #A93737;
+    --secondary-color: #4A0E0E;
+    --text-color: #333333;
+    --white-color: #FFFFFF;
+    --border-color: #E0BDBD;
+    --soft-bg: #FDECEC;
+    --success-color: #2E7D32;
+    --error-color: #D32F2F;
+}
+
+/* Pengaturan Dasar Body & Layout Utama */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.page-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+/* Header & Navigasi */
+.main-header {
+    padding: 1.5rem 0;
+    background-color: var(--bg-color);
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+.main-nav a {
+    margin-left: 2.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+.main-nav span {
+    margin: 0 0.5rem;
+    color: var(--border-color);
+}
+
+/* Halaman Awal (Landing Page) */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+.hero-text { max-width: 50%; }
+.hero-text .greeting { font-size: 1.2rem; font-weight: 500; margin-bottom: 0; }
+.hero-text h1 { font-size: 3.8rem; font-weight: 700; color: var(--secondary-color); margin: 0.5rem 0; line-height: 1.2; }
+.hero-text .tagline { font-size: 1.1rem; color: var(--text-color); margin-bottom: 2.5rem; max-width: 450px; }
+.hero-image { max-width: 40%; }
+.hero-image img { width: 100%; height: auto; }
+
+/* Halaman Login & Registrasi */
+.auth-layout {
+    display: flex;
+    width: 100%;
+    max-width: 950px;
+    background-color: var(--white-color);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(74, 14, 14, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+}
+.auth-form-section { flex: 1; padding: 3rem; min-width: 400px; box-sizing: border-box; }
+.auth-image-section { flex: 1; background-color: var(--soft-bg); display: flex; justify-content: center; align-items: center; padding: 3rem; }
+.auth-image-section img { max-width: 80%; height: auto; }
+
+/* Halaman Aplikasi (Dasbor, Diagnosa, dll) */
+.app-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(74, 14, 14, 0.08);
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+.dashboard-header { text-align: center; margin-bottom: 3rem; }
+.dashboard-header h2 { font-size: 2.5rem; font-weight: 700; color: var(--secondary-color); margin: 0; }
+.dashboard-header p { font-size: 1.1rem; color: var(--text-color); margin: 0.5rem auto 0; line-height: 1.6; }
+.dashboard-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.dashboard-grid.admin-view { grid-template-columns: repeat(2, 1fr); }
+.action-card { background-color: var(--white-color); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; text-decoration: none; color: var(--text-color); box-shadow: 0 8px 24px rgba(74, 14, 14, 0.05); transition: all 0.3s ease; border: 1px solid #eee; }
+.action-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(74, 14, 14, 0.1); border-color: var(--primary-color); }
+.action-card .icon { font-size: 3.5rem; line-height: 1; color: var(--primary-color); }
+.action-card h3 { font-size: 1.5rem; font-weight: 600; color: var(--secondary-color); margin: 1.5rem 0 0.5rem; }
+.action-card p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0; color: #666; }
+
+/* Elemen Umum: Tombol, Form, dll. */
+.btn { padding: 0.8rem 2.5rem; border: 2px solid transparent; border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; transition: all 0.3s ease; }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); border-color: var(--primary-color); }
+.btn-primary:hover { background-color: #8e2d2d; border-color: #8e2d2d; }
+.btn-secondary { background-color: var(--white-color); color: var(--primary-color); border-color: var(--primary-color); }
+.btn-secondary:hover { background-color: var(--primary-color); color: var(--white-color); }
+.btn-group { display: flex; gap: 1rem; }
+
+.form-container h2 { text-align: center; font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-top: 0; margin-bottom: 2rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input[type="text"], .form-group input[type="email"], .form-group input[type="password"], .form-group input[type="number"], .form-group textarea, .form-group select { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; box-sizing: border-box; font-family: 'Poppins', sans-serif; font-size: 1rem; }
+
+.alert { padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; text-align: center; font-weight: 500; }
+.alert-error { background-color: #FFCDD2; color: var(--error-color); }
+.alert-success { background-color: #C8E6C9; color: var(--success-color); }
+
+/* Footer */
+.main-footer { padding: 2rem; background-color: #F4DDDD; text-align: center; color: #8c6b6b; margin-top: auto; }
+
+/* Responsif */
+@media (max-width: 850px) {
+    .auth-image-section { display: none; }
+    .hero-content { flex-direction: column; text-align: center; }
+    .hero-text, .hero-image { max-width: 100%; }
+    .btn-group { justify-content: center; }
+    .dashboard-grid.admin-view { grid-template-columns: 1fr; }
+}
